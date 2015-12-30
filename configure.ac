@@ -14,6 +14,7 @@ AC_CONFIG_HEADERS([include/urweb/config.h])
 AX_PTHREAD([echo >/dev/null], [echo "Your C compiler does not support POSIX threads."; exit 1])
 
 AX_CHECK_OPENSSL([echo >/dev/null], [echo "You must install OpenSSL development files."; exit 1])
+AC_CHECK_TYPE(CRYPTO_THREADID, [echo >/dev/null], [echo "You must install a version of OpenSSL development files that defines CRYPTO_THREADID."; exit 1])
 
 AC_CHECK_PROG(MLTON, mlton, yes, [])
 
@@ -160,7 +161,7 @@ Ur/Web configuration:
   include directory:   INCLUDE        $INCLUDE
   site-lisp directory: SITELISP       $SITELISP
   C compiler:          CC             $CC
-  Extra CC args:       CCARGS         $CCARGS  
+  Extra CC args:       CCARGS         $CCARGS
   Extra MLTON args:    MLTONARGS      $MLTONARGS
   Postgres C header:   PGHEADER       $PGHEADER
   MySQL C header:      MSHEADER       $MSHEADER
