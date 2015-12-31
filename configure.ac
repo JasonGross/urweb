@@ -107,10 +107,10 @@ AC_COMPILE_IFELSE(
 [CLANG=yes], [CLANG=no])
 AC_MSG_RESULT([$CLANG])
 
-if test [$CLANG = "yes"]; then
-   PTHREAD_CFLAGS=""
-   PTHREAD_LIBS=""
-fi
+#if test [$CLANG = "yes"]; then
+#   PTHREAD_CFLAGS=""
+#   PTHREAD_LIBS=""
+#fi
 
 # Check if pthread_t is a scalar or pointer type so we can use the correct
 # OpenSSL functions on it.
