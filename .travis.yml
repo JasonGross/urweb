@@ -23,6 +23,6 @@ before_install:
   - if command -v brew &>/dev/null; then brew tap homebrew/boneyard; fi
   - if command -v brew &>/dev/null; then brew install openssl mlton; fi
   - if command -v brew &>/dev/null; then export CONFIGURE_ARGS="--with-openssl=/usr/local/opt/openssl"; fi
-  - if command -v brew &>/dev/null; then ln -s /usr/local/lib/libgmp.a /opt/local/lib/libgmp.a; fi
+  - if command -v brew &>/dev/null; then ln -s /usr/local/lib/libgmp.a /opt/local/lib/; fi
 
 script: ./autogen.sh && ./configure $CONFIGURE_ARGS && make && make test
