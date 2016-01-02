@@ -24,4 +24,4 @@ before_install:
   - if command -v brew &>/dev/null; then brew install openssl mlton; fi
   - if command -v brew &>/dev/null; then export CONFIGURE_ARGS="--with-openssl=/usr/local/opt/openssl"; fi
 
-script: ./autogen.sh && ./configure $CONFIGURE_ARGS && make && make test
+script: ./autogen.sh && ./configure $CONFIGURE_ARGS && cat config.log && make && make test
